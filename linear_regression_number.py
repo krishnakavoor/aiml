@@ -3,13 +3,13 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-# Fibonacci numbers for n = 1 to 10
-fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+# numbers for n = 1 to 10
+num = [0,1, 2, 3, 4, 5, 6, 7, 8, 9,10]
 
 # Prepare data
-n = np.arange(1, len(fib) + 1).reshape(-1, 1)  # feature: n
+n = np.arange(1, len(num) + 1).reshape(-1, 1)  # feature: n
 print("n",n)
-y = np.array(fib)  # target: Fibonacci value
+y = np.array(num)  # target: Fibonacci value
 print("y",y)
 
 # Train linear regression
@@ -19,8 +19,8 @@ model.fit(n, y)
 #print("Slope:", model.coef_[0])
 #print("Intercept:", model.intercept_)
 
-# Predict the next Fibonacci number (n = 11)
-n_new = np.array([[len(fib) + 1]])
+# Predict the next number (n = with couting it)
+n_new = np.array([[len(num)+1]])
 pred = model.predict(n_new)
 print("pred",pred)
 print("Predicted value at n=11:", pred[0])
